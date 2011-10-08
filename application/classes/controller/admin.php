@@ -32,9 +32,11 @@ class Controller_Admin extends Controller {
                         $snapshot_dir = $model->create_snapshot_dir ($os, $version);
 
                         if ($snapshot_dir) {
-                            $v = Upload::save ($_FILES ['file'],
+                            Upload::save ($_FILES ['file'],
                                           basename ($_FILES ['file'] ['name']),
                                           $snapshot_dir);
+                                          
+                            Kohana::log ('info', $_SERVER ["PHP_AUTH_USER"] . ' uploaded snapshot: ' . $snapshot_dir);
                         } else {
                             $post->error ('message', "Failed to create upload directory");
                         }
