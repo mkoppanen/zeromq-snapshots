@@ -75,9 +75,9 @@ class Model_Snapshot extends Model {
 	        foreach ($paths as $path) {
 	            $dirs = glob ("{$path}/????-??-??_??-??-??/"); 
     	        
-    	        if (count ($dirs) > 2) {
+    	        if (count ($dirs) > 5) {
     	            rsort ($dirs);
-    	            $slice = array_slice ($dirs, 2);
+    	            $slice = array_slice ($dirs, 5);
     	            
     	            foreach ($slice as $old) {
     	                $this->rmdir_r ($old);

@@ -26,7 +26,7 @@ class Controller_Download extends Controller {
 	    $basename = basename ($file);
 	    
 	    header ("Content-Type: $mime");
-	    header ("Content-Disposition: attachment; filename='{$basename}'");
+	    header ('Content-Disposition: attachment; filename="' . $basename . '"');
 	    readfile ($file);
 	    exit ();
 	}
