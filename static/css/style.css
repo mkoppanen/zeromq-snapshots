@@ -1,0 +1,66 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* general font settings */
+body {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 0.82em;
+}
+
+#page-content {
+	width: 600px;
+	margin: 0px auto;
+	text-align: left;
+	padding: 15px;
+}
+
+#page-wrapper {
+    width: 600px;
+    text-align: left;
+}
+
+#page-wrapper h2 {
+	margin: 0 0 0.5em 0;
+	padding-top: 0.5em;
+	font-size: 300%;
+	border-bottom: 1px solid #666;
+	font-weight: normal;
+}
+
+#snapshot-list ul {
+    list-style-type: circle;
+}
+
+#snapshot-list h3 {
+    font-size: 150%;
+    font-weight: normal;
+}
+
+#snapshot-list h3 span {
+    color: red;
+}
+
+
+#header {
+    height: 160px;
+    width: 600px;
+}
+
+#header h1 a span{
+    display: none;
+}
+
+#header h1 a,#header h1 a:hover {
+    background-image: url(../image/logo.gif);
+    background-repeat: no-repeat;
+    height: 119px;
+    width: 381px;
+    position: absolute;
+    top: 35px;
+}
+
+#admin-section ul {
+    list-style-type: none;
+}

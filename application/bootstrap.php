@@ -81,6 +81,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 Kohana::init(array(
 	'base_url'   => '/',
+	'index_file' => ''
 ));
 
 /**
@@ -107,12 +108,20 @@ Kohana::modules(array(
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	));
 
+Route::set ('download', 'download/<os>/<version><ignore>', array('os' => '[^/]+', 'version' => '[^/]+', 'ignore' => '.*'))
+    ->defaults (array (
+        'controller' => 'download',
+        'action'     => 'file',
+      ));
+
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'welcome',
+		'controller' => 'index',
 		'action'     => 'index',
 	));
+	
+
