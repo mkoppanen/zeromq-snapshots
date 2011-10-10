@@ -25,6 +25,6 @@ class Controller_Download extends Controller {
 	    $basename = basename ($file);
 	    $this->response->headers ('Content-Type', File::mime ($file))
                        ->headers ('Content-Disposition', "attachment; filename=\"{$basename}\"")
-                       ->body (file_get_contents ($file)));
+                       ->body (file_get_contents ($file));
 	}
 }
