@@ -4,6 +4,8 @@ class Controller_Download extends Controller {
 
 	public function action_file()
 	{
+	    $this->auto_render = FALSE;
+	    
 	    $os      = $this->request->param ('os');
 	    $version = $this->request->param ('version');
 
@@ -19,15 +21,10 @@ class Controller_Download extends Controller {
 	    
 	    if (!$file)
 	        throw new ErrorException ('Failed to get the download file');
-	    
-	    $finfo = finfo_open (FILEINFO_MIME_TYPE);
-	    $mime  = finfo_file ($finfo, $file);
-	    
+
 	    $basename = basename ($file);
-	    
-	    header ("Content-Type: $mime");
-	    header ('Content-Disposition: attachment; filename="' . $basename . '"');
-	    readfile ($file);
-	    exit ();
+	    $this->response->headers ('Content-Type', File::mime ($file))
+                       ->headers ('Content-Disposition', "attachment; filename=\"{$basename}\"");
+                       ->body (file_get_contents ($file)));
 	}
 }
