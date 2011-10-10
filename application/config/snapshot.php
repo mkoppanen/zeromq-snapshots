@@ -6,7 +6,7 @@ $config ['zip_ttl'] = 86400 * 10;
 $config ['os'] ['win64']  = 'Windows 64 bit';
 $config ['os'] ['win32']  = 'Windows 32 bit';
 $config ['os'] ['src']    = 'Source packages';
-$config ['os'] ['phpwin'] = 'PHP extension';
+$config ['os'] ['phpwin'] = 'PHP 5.3 extension';
 
 $config ['path'] ['src'] ['2.1-stable'] = '/home/jenkins/snapshot/src/libzmq2-1';
 $config ['path'] ['src'] ['3.0-beta']   = '/home/jenkins/snapshot/src/libzmq3-0/';
